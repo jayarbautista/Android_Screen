@@ -41,8 +41,6 @@ public class ListViewLayoutFragment extends ListFragment {
 				getActivity(), android.R.layout.simple_list_item_1, activities) {
 			public View getView(int pos, View convertView, ViewGroup parent) {
 				View v = super.getView(pos, convertView, parent);
-				// Documentation says that simple_list_item_1 is a TextView,
-				// so cast it so that you can set its text value
 				TextView tv = (TextView) v;
 				ResolveInfo ri = getItem(pos);
 				tv.setText(ri.loadLabel(pm));
@@ -60,7 +58,6 @@ public class ListViewLayoutFragment extends ListFragment {
 		if (activityInfo == null)
 			return;
 		Intent i = new Intent(Intent.ACTION_MAIN);
-		i.setClassName(activityInfo.applicationInfo.packageName, activityInfo.name);
 		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		startActivity(i);
 	}
