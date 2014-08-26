@@ -63,7 +63,6 @@ public class MultipleScreenFragment extends Fragment{
 		mGridViewButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				HOLD_LAYOUT = R.layout.gridview_layout;
 				Intent i = new Intent(getActivity(),GridViewLayout.class);
 				startActivity(i);
 			}
