@@ -9,7 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class MultipleScreenFragment extends Fragment{
-	public static int HOLD_LAYOUT = 0;
+	
+	public static final String HOLD_LAYOUT = "MultipleScreenFragment";
 	
 	Button mShowWidgetButton;
 	Button mLinearButton;
@@ -24,8 +25,8 @@ public class MultipleScreenFragment extends Fragment{
 		mShowWidgetButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				HOLD_LAYOUT = R.layout.screen_layout;
 				Intent i = new Intent(getActivity(),LayoutChanger.class);
+				i.putExtra(HOLD_LAYOUT, R.layout.screen_layout);
 				startActivity(i);
 			}
 		});
@@ -34,8 +35,8 @@ public class MultipleScreenFragment extends Fragment{
 		mLinearButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				HOLD_LAYOUT = R.layout.linear_layout_view;
 				Intent i = new Intent(getActivity(),LayoutChanger.class);
+				i.putExtra(HOLD_LAYOUT, R.layout.linear_layout_view);
 				startActivity(i);
 			}
 		});
@@ -44,8 +45,8 @@ public class MultipleScreenFragment extends Fragment{
 		mRelativeButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				HOLD_LAYOUT = R.layout.relative_layout_view;
 				Intent i = new Intent(getActivity(),LayoutChanger.class);
+				i.putExtra(HOLD_LAYOUT, R.layout.relative_layout_view);
 				startActivity(i);
 			}
 		});

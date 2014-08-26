@@ -8,6 +8,6 @@ public class LayoutChanger extends FragmentActivity{
 	protected void onCreate(Bundle savedInstanceState)
 	{
 	   super.onCreate(savedInstanceState);
-	   setContentView(MultipleScreenFragment.HOLD_LAYOUT);
+	   setContentView((Integer)this.getIntent().getSerializableExtra(MultipleScreenFragment.HOLD_LAYOUT));
 	}
 }
